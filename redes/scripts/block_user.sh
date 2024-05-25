@@ -1,6 +1,6 @@
 echo "Dime la Ip a bloquear por el puerto 22"
 echo "Ej. 192.168.1.5"
-reax x
+read x
 
 
 echo "Bloqueando ip..."
@@ -16,12 +16,17 @@ while true
 
 	echo "Desea borrar la regla"	
 	echo "[ 1 ] - Si"
+	echo "[ 2 ] - Salir"
 	read y
 	
-	case in $y
+	case $y in
 		1)
-			sudo /sbin/iptables -D INPUT -p tcp -s $x -j DROP
-			,,
+		 	sudo /sbin/iptables -D INPUT -p tcp -s $x -j DROP
+			;;
+		2)	
+			echo "Saliendo del firewall"
+			exit
+			;;
 	esac
 done
 
