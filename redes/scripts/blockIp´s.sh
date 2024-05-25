@@ -8,7 +8,7 @@ read y
 
 echo "Ejecutando codigo..."
 echo "/sbin/iptables -A INPUT -m iprange --src-range $x-$y -p tcp --dport 22 -j DROP"
-/sbin/iptables -A INPUT -m iprange –dst-range $x-$y -p tcp --dport 22 -j DROP
+sudo /sbin/iptables -A INPUT -m iprange –dst-range $x-$y -p tcp --dport 22 -j DROP
 echo "Rango de ip´s bloqueadas $x - $y"
 echo ""
 
@@ -22,9 +22,14 @@ while true
 	read z
 	case $z in
 		1)
+			echo "Quitando regla..."
 			sudo /sbin/iptables -D INPUT -m iprange –dst-range $x-$y -p tcp --dport 22 -j DROP
+			echo "Regla eliminada satisfactoriamente."
 			;;
 		2)
+			echo "Saliendo del programa"
+			echo "Las reglas que se mantienen son:"
+			sudo /sbin/iptables -nL
 			exit
 			;;
 	esac
