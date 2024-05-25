@@ -14,6 +14,8 @@ echo ""
 
 while true
 	do
+	echo "Las reglas contiene esto:"
+	sudo /sbin/iptables -nL
 	echo "Desea quitar la regla?"
 	echo "[ 1 ] - Si"
 	echo "[ 2 ] - Salir"
