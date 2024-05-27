@@ -1,4 +1,4 @@
-#!/bin/bash
+
 
 echo "Dime la IP a bloquear por el puerto 22"
 echo "Ej. 192.168.1.5"
