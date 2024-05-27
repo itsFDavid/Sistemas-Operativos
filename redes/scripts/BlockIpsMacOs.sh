@@ -1,4 +1,4 @@
-#!/bin/bash
+
 
 echo "Dime la IP del rango inicial a bloquear"
 echo "Ejemplo: 192.168.1.5"
